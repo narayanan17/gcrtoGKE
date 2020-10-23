@@ -1,0 +1,5 @@
+config:
+  gcp-typescript-gcrtogke:docker-config-file: /root/.docker/config.json
+  gcp:project: flawless-outlet-284222
+  gcp:zone: us-west1-a
+  pulumi:template: gcp-typescript
