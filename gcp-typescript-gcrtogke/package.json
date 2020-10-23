@@ -1,11 +1,10 @@
 {
-    "name": "gcp-typescript-gcrtogke",
-    "devDependencies": {
-        "@types/node": "^10.0.0"
-    },
+    "name": "gcp-ts-gke-hello-world",
     "dependencies": {
-        "@pulumi/pulumi": "^2.0.0",
-	"@pulumi/docker": "^1.0.0",
-        "@pulumi/gcp": "^3.0.0"
+        "@types/node": "^8.0.0",
+        "@pulumi/gcp": "^3.0.0",
+        "@pulumi/docker": "^1.0.0",
+        "@pulumi/kubernetes": "^2.0.0",
+        "@pulumi/pulumi": "^2.0.0"
     }
 }
