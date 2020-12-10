@@ -30,7 +30,7 @@ const gcrDockerProvider = new docker.Provider('gcr', {
 var dockerImage = registryImage.apply(r => new docker.RemoteImage(`${imageName}-docker-image`, {
     name: r.name!,
     pullTriggers: [registryImage.sha256Digest!],
-    keepLocally: false
+    keepLocally: true
 }, {provider: gcrDockerProvider}));
 
 
