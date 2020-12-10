@@ -5,11 +5,11 @@ import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
 import * as docker from "@pulumi/docker";
 
-const name = "demoapp";
+
 
 const config = new pulumi.Config();
 const configFile = config.require("docker-config-file");
-
+const name = "MusicStore-"+${gcp.config.envrionment};
 
 const imageName = config.get("image-name") ?? "musicstore";
 
