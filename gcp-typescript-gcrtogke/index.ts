@@ -9,7 +9,7 @@ import * as docker from "@pulumi/docker";
 
 const config = new pulumi.Config();
 const configFile = config.require("docker-config-file");
-const name = "musicStore-"+config.require("envrionment");
+const name = "musicstore-"+config.require("envrionment");
 
 const imageName = config.get("image-name") ?? "musicstore";
 
