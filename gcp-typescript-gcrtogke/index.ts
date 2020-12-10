@@ -176,6 +176,7 @@ const service = new k8s.core.v1.Service(name,
 );
 
 // Export the Service name and public LoadBalancer endpoint
+export let kubeConfigJson = kubeconfig;
 export const serviceName = service.metadata.name;
 export const servicePublicIP = service.status.loadBalancer.ingress[0].ip;
 
