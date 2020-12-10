@@ -11,7 +11,7 @@ const config = new pulumi.Config();
 const configFile = config.require("docker-config-file");
 const name = "musicstore-"+config.require("envrionment");
 
-const imageName = config.get("image-name") ?? "musicstore";
+const imageName = "musicstore";
 
 const gcrDockerProvider = new docker.Provider('gcr', {
     registryAuth: [{
@@ -27,10 +27,10 @@ const gcrDockerProvider = new docker.Provider('gcr', {
     }, {provider: gcrDockerProvider}));
 
 // Using the value from the registryImage to pull the image if it's new, pullTriggers looks for a new sha. 
-var dockerImage = registryImage.apply(r => new docker.RemoteImage(`${imageName}:latest-docker-image`, {
+var dockerImage = registryImage.apply(r => new docker.RemoteImage(`${imageName}-docker-image`, {
     name: r.name!,
     pullTriggers: [registryImage.sha256Digest!],
-    keepLocally: true
+    keepLocally: false
 }, {provider: gcrDockerProvider}));
 
 
