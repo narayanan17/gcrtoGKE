@@ -141,7 +141,7 @@ const deployment = new k8s.apps.v1.Deployment(name,
                     containers: [
                         {
                             name: name,
-                            image: dockerImage.name,
+                            image: `gcr.io/${gcp.config.project}/${imageName}:latest`,
                             ports: [{ name: "http", containerPort: 80 }],
                         },
                     ],
