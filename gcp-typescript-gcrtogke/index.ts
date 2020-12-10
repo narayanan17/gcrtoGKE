@@ -27,7 +27,7 @@ const gcrDockerProvider = new docker.Provider('gcr', {
     }, {provider: gcrDockerProvider}));
 
 // Using the value from the registryImage to pull the image if it's new, pullTriggers looks for a new sha. 
-var dockerImage = registryImage.apply(r => new docker.RemoteImage(`${imageName}-docker-image`, {
+var dockerImage = registryImage.apply(r => new docker.RemoteImage(`${imageName}:latest-docker-image`, {
     name: r.name!,
     pullTriggers: [registryImage.sha256Digest!],
     keepLocally: true
